@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #E7E8D1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #A7BEAE;
+  padding: 40px 80px;
+}
+
+.header .logo {
+  font-size: 32px;
+  font-weight: 700;
+  color: #B85042;
+}
+#add-new-book {
+  background-color: #B85042;
+  color: #E7E8D1;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+
+  transition: background-color 0.2s linear;
+}
+
+#add-new-book:hover {
+  background-color: #b66156;
+}
