@@ -20,7 +20,7 @@ body {
   font-weight: 700;
   color: #B85042;
 }
-#add-new-book {
+button {
   background-color: #B85042;
   color: #E7E8D1;
   font-weight: 700;
@@ -33,6 +33,47 @@ body {
   transition: background-color 0.2s linear;
 }
 
-#add-new-book:hover {
+button:hover {
   background-color: #b66156;
+}
+
+.container {
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.book-card {
+  background-color: #A7BEAE;
+  border-radius: 7px;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 900px;
+}
+
+.title {
+  color:#B85042;
+  font-weight: 700;
+  font-size: 26px;
+}
+
+.author {
+  padding-left: 20px;
+  font-size: 19px;
+  color: #E7E8D1;
+}
+
+.pages, .read {
+  color: #B85042;
+  font-size: 21px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
