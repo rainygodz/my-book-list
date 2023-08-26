@@ -1,3 +1,6 @@
+const openModalBtn = document.querySelector("#open-modal");
+const modalWindow = document.querySelector("dialog");
+
 const myBookList = [];
 
 function Book(title, author, pages, read="not read yet") {
@@ -7,6 +10,7 @@ function Book(title, author, pages, read="not read yet") {
   this.read = read;
 }
 
-function addBookToList() {
-  
-}
+openModalBtn.addEventListener("click", () => {
+  modalWindow.style.display = "visible"
+  modalWindow.showModal();
+});
