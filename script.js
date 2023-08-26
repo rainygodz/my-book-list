@@ -1,11 +1,12 @@
-function Book(author, pages) {
+const myBookList = [];
+
+function Book(title, author, pages, read="not read yet") {
+  this.title = title;
   this.author = author;
   this.pages = pages;
-
-  this.info = function() {
-    return `${author}, ${pages}`;
-  }
+  this.read = read;
 }
 
-const book1 = new Book("Petr", 23);
-console.log(book1.info());
+function addBookToList() {
+  
+}

@@ -12,8 +12,25 @@
     <div class="logo">MyBookList</div>
 
     <div class="control-bar">
-      <button id="add-new-book">New Book</button>
+      <button id="open-modal">New Book</button>
     </div>
+    <dialog open>
+      <h3>New Book</h3>
+      <form method="dialog">
+        <input placeholder="Title" type="text" id="title">
+
+        <input placeholder="Author" type="text" id="author">
+
+        <input placeholder="Pages" type="number" id="pages">
+
+        <!-- <input placeholder="Read Status" type="text" id="read-status"> -->
+        <select name="read-status" id="read-status">
+          <option value="not-read" selected>Not read yet</option>
+          <option value="read">Read</option>
+        </select>
+        <button id="add-book">Add</button>
+      </form>
+    </dialog>
   </div>
 
   <div class="main">
