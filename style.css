@@ -6,11 +6,15 @@
 
 body {
   background-color: #E7E8D1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;  
 }
 
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: #A7BEAE;
   padding: 40px 80px;
 }
@@ -35,6 +39,10 @@ button {
 
 button:hover {
   background-color: #b66156;
+}
+
+.main {
+  flex-grow: 1;
 }
 
 .container {
