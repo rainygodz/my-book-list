@@ -1,5 +1,6 @@
 const openModalBtn = document.querySelector("#open-modal");
 const modalWindow = document.querySelector("dialog");
+const addBookBtn = document.querySelector("#add-book");
 
 const myBookList = [];
 
@@ -11,14 +12,23 @@ function Book(title, author, pages, readStatus) {
 }
 
 
-function addBookToList(title, author, pages, readStatus) {
+function addBookToList() {
+  const form = document.querySelector("form");
+  const title = document.querySelector("#title").value;
+  const author = document.querySelector("#author").value;
+  const pages = document.querySelector("#pages").value;
+  const readStatus = document.querySelector("#read-status").value;
+
   const book = new Book(title, author, pages, readStatus);
   myBookList.push(book);
+  form.reset();
 }
 
 function updateBookList() {
   const container = document.querySelector(".container");
-  const bookCardDiv = document.createElement("div");
+  container.innerHTML = "";
+  myBookList.forEach(book => {
+    const bookCardDiv = document.createElement("div");
   const infoDiv = document.createElement("div");
   const titleDiv = document.createElement("div");
   const authorDiv = document.createElement("div");
@@ -38,10 +48,10 @@ function updateBookList() {
   readBtn.setAttribute("id", "read");
   removeBtn.setAttribute("id", "remove");
 
-  titleDiv.textContent = myBookList[0].title;
-  authorDiv.textContent = myBookList[0].author;
-  pagesDiv.textContent = "Pages: " + myBookList[0].pages;
-  readDiv.textContent = myBookList[0].readStatus;
+  titleDiv.textContent = book.title;
+  authorDiv.textContent = book.author;
+  pagesDiv.textContent = "Pages: " + book.pages;
+  readDiv.textContent = book.readStatus;
   readBtn.textContent = "Read";
   removeBtn.textContent = "Remove";
 
@@ -57,6 +67,7 @@ function updateBookList() {
   bookCardDiv.appendChild(buttonsDiv);
 
   container.appendChild(bookCardDiv);
+  })
 }
 
 
@@ -64,5 +75,5 @@ openModalBtn.addEventListener("click", () => {
   modalWindow.showModal();
 });
 
-addBookToList("The Financier", "Theodore Dreiser", 230, "not read yet");
-updateBookList();
+addBookBtn.addEventListener("click", addBookToList);
+addBookBtn.addEventListener("click", updateBookList);
