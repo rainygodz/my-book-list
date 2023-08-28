@@ -2,13 +2,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
   background-color: #E7E8D1;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
 }
 
 .header {
@@ -106,8 +107,7 @@ button:hover {
 
 .copyright {
   color: #B85042;
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 18px;
 }
 
 dialog {
