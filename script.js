@@ -2,6 +2,7 @@ const openModalBtn = document.querySelector("#open-modal");
 const modalWindow = document.querySelector("dialog");
 const addBookBtn = document.querySelector("#add-book");
 
+
 const myBookList = [];
 
 function Book(title, author, pages, readStatus) {
@@ -27,7 +28,7 @@ function addBookToList() {
 function updateBookList() {
   const container = document.querySelector(".container");
   container.innerHTML = "";
-  myBookList.forEach(book => {
+  myBookList.forEach((book, index) => {
     const bookCardDiv = document.createElement("div");
   const infoDiv = document.createElement("div");
   const titleDiv = document.createElement("div");
@@ -46,7 +47,9 @@ function updateBookList() {
   readDiv.classList.add("read");
   buttonsDiv.classList.add("buttons");
   readBtn.setAttribute("id", "read");
+  readBtn.setAttribute("book-id", `${index}`);
   removeBtn.setAttribute("id", "remove");
+  removeBtn.setAttribute("book-id", `${index}`);
 
   titleDiv.textContent = book.title;
   authorDiv.textContent = book.author;
@@ -68,6 +71,24 @@ function updateBookList() {
 
   container.appendChild(bookCardDiv);
   })
+
+  const readBtns = document.querySelectorAll("#read");
+  readBtns.forEach(button => {
+    button.addEventListener("click", changeReadStatus);
+  })
+}
+
+function changeReadStatus(event) {
+  const bookId = event.target.getAttribute("book-id");
+
+  if (myBookList[bookId].readStatus === "Read") {
+    myBookList[bookId].readStatus = "Not read yet";
+    updateBookList();
+  } else {
+    myBookList[bookId].readStatus = "Read"
+    updateBookList();
+  }
+
 }
 
 
@@ -77,3 +98,4 @@ openModalBtn.addEventListener("click", () => {
 
 addBookBtn.addEventListener("click", addBookToList);
 addBookBtn.addEventListener("click", updateBookList);
+
