@@ -72,9 +72,21 @@ function updateBookList() {
   container.appendChild(bookCardDiv);
   })
 
+  if (!container.innerHTML) {
+    const emptyMessage = document.createElement("h1");
+    emptyMessage.textContent = "No books in your list yet.";
+    emptyMessage.classList.add("empty-message");
+    container.appendChild(emptyMessage);
+  }
+
   const readBtns = document.querySelectorAll("#read");
   readBtns.forEach(button => {
     button.addEventListener("click", changeReadStatus);
+  });
+
+  const removeBtns = document.querySelectorAll("#remove");
+  removeBtns.forEach(button => {
+    button.addEventListener("click", removeBook);
   })
 }
 
@@ -88,7 +100,13 @@ function changeReadStatus(event) {
     myBookList[bookId].readStatus = "Read"
     updateBookList();
   }
+}
 
+
+function removeBook(event) {
+  const bookId = event.target.getAttribute("book-id");
+  myBookList.splice(bookId, 1);
+  updateBookList();
 }
 
 
