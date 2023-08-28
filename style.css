@@ -53,6 +53,11 @@ button:hover {
   align-items: center;
 }
 
+.empty-message {
+  color: #B85042;
+  font-size: 28px;
+}
+
 .book-card {
   background-color: #A7BEAE;
   border-radius: 7px;
