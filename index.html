@@ -1,43 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="./images/book-shelf.png">
-  <script src="./script.js" defer></script>
-  <title>MyBookList</title>
-</head>
-<body>
-  <div class="header">
-    <div class="logo">MyBookList</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="./images/book-shelf.png" />
+    <script src="./script.js" defer></script>
+    <title>MyBookList</title>
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo">MyBookList</div>
 
-    <div class="control-bar">
-      <button id="open-modal">New Book</button>
+      <div class="control-bar">
+        <button id="open-modal">New Book</button>
+      </div>
+
+      <dialog data-modal>
+        <h3>New Book</h3>
+        <form method="dialog">
+          <input
+            placeholder="Title*"
+            type="text"
+            id="title"
+            minlength="2"
+            maxlength="25"
+            required
+          />
+          <input
+            placeholder="Author*"
+            type="text"
+            id="author"
+            minlength="5"
+            maxlength="30"
+            required
+          />
+          <input
+            placeholder="Pages*"
+            type="number"
+            id="pages"
+            min="1"
+            required
+          />
+
+          <select name="read-status" id="read-status">
+            <option value="Not read yet" selected>Not read yet</option>
+            <option value="Read">Read</option>
+          </select>
+
+          <button id="add-book">Add</button>
+        </form>
+      </dialog>
     </div>
 
-    <dialog data-modal>
-      <h3>New Book</h3>
-      <form method="dialog">
-        <input placeholder="Title" type="text" id="title">
-        <input placeholder="Author" type="text" id="author">
-        <input placeholder="Pages" type="number" id="pages">
-
-        <select name="read-status" id="read-status">
-          <option value="Not read yet" selected>Not read yet</option>
-          <option value="Read">Read</option>
-        </select>
-        
-        <button id="add-book">Add</button>
-      </form>
-    </dialog>
-
-  </div>
-
-  <div class="main">
+    <div class="main">
       <div class="container">
         <h1 class="empty-message">No books in your list yet.</h1>
       </div>
@@ -47,10 +69,9 @@
       <div class="copyright">
         Copyright© 2023 rainygodz
         <a href="https://github.com/rainygodz" target="_blank">
-          <img src="./images/github-mark-white.png" alt="">
+          <img src="./images/github-mark-white.png" alt="" />
         </a>
       </div>
     </div>
-
-</body>
+  </body>
 </html>

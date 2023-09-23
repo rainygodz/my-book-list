@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #E7E8D1;
+  background-color: #e7e8d1;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -16,18 +16,18 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #A7BEAE;
+  background-color: #a7beae;
   padding: 40px 80px;
 }
 
 .header .logo {
   font-size: 32px;
   font-weight: 700;
-  color: #B85042;
+  color: #b85042;
 }
 button {
-  background-color: #B85042;
-  color: #E7E8D1;
+  background-color: #b85042;
+  color: #e7e8d1;
   font-weight: 700;
   font-size: 16px;
   padding: 10px 15px;
@@ -55,12 +55,12 @@ button:hover {
 }
 
 .empty-message {
-  color: #B85042;
+  color: #b85042;
   font-size: 28px;
 }
 
 .book-card {
-  background-color: #A7BEAE;
+  background-color: #a7beae;
   border-radius: 7px;
   padding: 30px;
   display: flex;
@@ -70,7 +70,7 @@ button:hover {
 }
 
 .title {
-  color:#B85042;
+  color: #b85042;
   font-weight: 700;
   font-size: 26px;
 }
@@ -78,11 +78,12 @@ button:hover {
 .author {
   padding-left: 20px;
   font-size: 19px;
-  color: #E7E8D1;
+  color: #e7e8d1;
 }
 
-.pages, .read {
-  color: #B85042;
+.pages,
+.read {
+  color: #b85042;
   font-size: 21px;
 }
 
@@ -93,7 +94,7 @@ button:hover {
 }
 
 .footer {
-  background-color: #A7BEAE;
+  background-color: #a7beae;
   padding: 40px 80px;
   display: flex;
   align-items: center;
@@ -106,12 +107,12 @@ button:hover {
 }
 
 .copyright {
-  color: #B85042;
+  color: #b85042;
   font-size: 18px;
 }
 
 dialog {
-  background-color: #A7BEAE;
+  background-color: #a7beae;
   border-radius: 7px;
   border: none;
   box-shadow: 0px 0px 7px #92645e;
@@ -124,7 +125,7 @@ dialog {
 }
 
 dialog h3 {
-  color: #B85042;
+  color: #b85042;
   margin: 30px;
   text-align: center;
   font-size: 24px;
@@ -146,5 +147,5 @@ input {
 }
 
 input:focus {
-  border: 3px solid #E7E8D1;
+  border: 3px solid #e7e8d1;
 }
